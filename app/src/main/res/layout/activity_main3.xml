@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity3">
+
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:hint="@string/hint_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"/>
+
+    <Button
+        android:id="@+id/btnApresentarNome"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/botao_apresentar_nome" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:id="@+id/txtNomeDigiado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/chkLembrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_lembrar" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/rdbOpçao1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioburron_opt1" />
+
+        <RadioButton
+            android:id="@+id/rdbOpçao2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radioburron_opt2" />
+    </RadioGroup>
+</LinearLayout>
