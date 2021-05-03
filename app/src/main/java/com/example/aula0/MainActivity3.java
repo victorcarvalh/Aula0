@@ -9,15 +9,19 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
-public class MainActivity3 extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class MainActivity3 extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
     EditText edtNome;
     Button btnApresentarNome;
     TextView txtNomeDigitado;
     CheckBox chkLembrar;
     RadioButton rdbopçao1;
     RadioButton rdbopçao2;
+    ToggleButton tgbutton;
+    SeekBar skbPercent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +38,16 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
         rdbopçao1 = (RadioButton) findViewById(R.id.rdbOpçao1);
         rdbopçao1.setOnCheckedChangeListener(this);
+
         rdbopçao2 = (RadioButton) findViewById(R.id.rdbOpçao2);
         rdbopçao2.setOnCheckedChangeListener(this);
+
+        tgbutton = (ToggleButton)findViewById(R.id.tgbutton);
+        tgbutton.setOnCheckedChangeListener(this);
+
+        skbPercent = (SeekBar)findViewById(R.id.skbPercent);
+        skbPercent.setOnSeekBarChangeListener(this);
+
 
     }
 
@@ -65,8 +77,28 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
             if (rdbopçao2.isChecked()){
                 txtNomeDigitado.setText("Opção 2 marcada");
             }
+        }else if (buttonView == tgbutton) {
+            if(tgbutton.isChecked()){
+                txtNomeDigitado.setText("TgButton On");
+            }else {
+                txtNomeDigitado.setText("TgButton Off");
+            }
         }
 
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        txtNomeDigitado.setText("Valor: " + progress);
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
 }
