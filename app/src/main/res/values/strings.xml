@@ -21,4 +21,5 @@
     <string name="checkbox_lembrar">Lembrar senha </string>
     <string name="radioburron_opt1">Opção 1</string>
     <string name="radioburron_opt2">Opção 2</string>
+    <string name="botao_excluir">Excluir</string>
 </resources>
